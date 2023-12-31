@@ -1,0 +1,18 @@
+syntax = "proto3";
+package profile;
+
+option go_package = "proto/profile;profile";
+
+service ProfileService {
+    rpc Create (CreateRequest) returns (CreateResponse) {}
+}
+
+message CreateRequest {
+    string name = 1;
+    bool is_verified = 2;
+    int32 id = 3;
+}
+
+message CreateResponse {
+    string message = 1;
+}
